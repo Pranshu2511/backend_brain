@@ -1,0 +1,14 @@
+Flask
+Flask-Cors
+Flask-Mail
+torch
+torchvision
+Pillow
+pymongo
+bcrypt
+gdown
+python-dotenv
+Werkzeug
+PyJWT
+gunicorn
+captcha
