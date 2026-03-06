@@ -11,9 +11,17 @@ import io, bcrypt, jwt, smtplib,time,secrets, random
 from flask import send_file,session
 from captcha.image import ImageCaptcha
 import re
-
+import requests
+import os
 app = Flask(__name__)
 CORS(app)
+
+@app.after_request
+def after_request(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type,Authorization"
+    response.headers["Access-Control-Allow-Methods"] = "GET,POST,PUT,DELETE,OPTIONS"
+    return response
 
 # Secret key
 app.config['SECRET_KEY'] = 'your_secret_key_here'
